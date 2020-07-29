@@ -36,7 +36,7 @@
 
           <div class="info-box-content">
             <span class="info-box-text">Promo</span>
-            <span class="info-box-number"><?= $promo ?></span>
+            <span class="info-box-number"></span>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
           <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-basket"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Order Amount</span>
-            <span class="info-box-number"><?= indo_currency($amount[0]['total']) ?></span>
+            <span class="info-box-number"></span>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Members</span>
-            <span class="info-box-number"><?= $members ?></span>
+            <span class="info-box-number"></span>
           </div>
         </div>
       </div>

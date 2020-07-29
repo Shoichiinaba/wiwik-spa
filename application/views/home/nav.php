@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-info navbar-light">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -15,7 +15,7 @@
       </a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link" data-tooltip="tooltip" title="Profile" href="<?= site_url('') ?>">
+      <a class="nav-link" data-tooltip="tooltip" title="Profile" href="<?= site_url('Profil') ?>">
         <i class="far fa-user"></i>
         <span>Profile</span>
       </a>  

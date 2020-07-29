@@ -20,21 +20,24 @@
     </head>
     <?=
       "<style>
-          body{
-              background-image:url(".base_url()."assets/img/beck.png);
-              background-attachment:fixed;
-              background-size:100% 100%;
-          }
+      body{
+        background-image:url(".base_url()."assets/img/beck.png);
+        background-attachment:fixed;
+        background-size:100% 100%;
+      }
       </style>";
-    ?>
-    <body class="login-page">
+      ?>
+    <body class="hold-transition login-page">
       <div class="login-box">
         <div class="login-logo">
-          <a href=""><b class= "text-red" >WIWIEK</b> <i class="text-blue"> SPA </i></a>
+          <small>
+             <img src="assets/img/logspa1.png" alt="" />
+          </small>
+          <a href=""><b class= "text-indigo" >WIWIEK</b> <i class="text-fuchsia"> SPA </i></a>
         </div>
         <div class="card">
           <div class="card-body login-card-body">
-            <p class="login-box-msg">Masukan email & Password yang aktiv</p>
+            <p class="login-box-msg">Masukan email & Password yang aktif</p>
             <form action="<?= site_url('auth/login')?>" method="post">
             <!-- Alert -->
             <?php

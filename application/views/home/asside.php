@@ -34,7 +34,7 @@
           </li>
           <!-- Terapis -->
           <li class="nav-item">
-            <a href="<?= site_url('member') ?>" class="nav-link <?= $this->uri->segment(1) == 'member' ? 'active' : '' ?>">
+            <a href="<?= site_url('Terapis') ?>" class="nav-link <?= $this->uri->segment(1) == 'Terapis' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-address-card"></i>
               <p>Terapis</p>
               <span class="float-sm-right">

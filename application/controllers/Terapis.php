@@ -1,12 +1,12 @@
 <?php
 
-class Member extends CI_Controller{ 
+class Terapis extends CI_Controller{ 
 
     function __construct()
     {
         parent::__construct();
         check_not_login();
-		$this->load->model('M_member','member');
+		$this->load->model('M_terapis');
 
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = 1048;
@@ -17,8 +17,8 @@ class Member extends CI_Controller{
     
     public function index()
     {
-        $data['row'] = $this->member->get();
-        $this->template->load('home/template','menu/member', $data); 
+		$data['list'] =$this->M_terapis->get_terapis();
+        $this->template->load('home/template','menu/terapis', $data); 
     }
 
     function add()
