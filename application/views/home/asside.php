@@ -43,34 +43,19 @@
             </a>
           </li>
           <!-- jasa -->
-          <li class="nav-item has-treeview <?= $this->uri->segment(2) == 'product_kiloan' | $this->uri->segment(2) == 'product_satuan' ? 'menu-open' : '' ?>">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-bed"></i>
-              <p> Jasa</p>
-              <i class="right fas fa-angle-left"></i>
-            </a>
-            <ul class="nav-item nav-treeview">
-              <li class="nav-item">
-                <a href="<?= site_url('product/product_kiloan') ?>" class="nav-link <?= $this->uri->segment(2) == 'product_kiloan' ? 'active' : '' ?>">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kiloan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= site_url('product/product_satuan') ?>" class="nav-link <?= $this->uri->segment(2) == 'product_satuan' ? 'active' : '' ?>">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Satuan</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('jasa') ?>" class="nav-link <?= $this->uri->segment(1) == 'jasa' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>Jasa</p>
+           </a>
+        </li>
           <!-- Barang -->
           <li class="nav-item">
-            <a href="<?= site_url('promo') ?>" class="nav-link <?= $this->uri->segment(1) == 'promo' ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-tag"></i>
+            <a href="<?= site_url('barang') ?>" class="nav-link <?= $this->uri->segment(1) == 'barang' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cubes"></i>
               <p>Barang</p>
-            </a>
-          </li>
+           </a>
+        </li>
           <!-- Laporan -->
           <li class="nav-item">
             <a href="<?= site_url('Laporan') ?>" class="nav-link <?= $this->uri->segment(1) == 'Laporan' ? 'active' : '' ?>">
@@ -108,13 +93,6 @@
               <p>Jasa</p>
            </a>
         </li>
-        <li class="nav-item">
-            <a href="<?= site_url('barang') ?>" class="nav-link <?= $this->uri->segment(1) == 'barang' ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-cubes"></i>
-              <p>Barang</p>
-           </a>
-        </li>
-
         <!-- keluar -->
         <li class="nav-item">
           <a href="<?= site_url('auth/logout') ?>" class="nav-link tombol-keluar">
