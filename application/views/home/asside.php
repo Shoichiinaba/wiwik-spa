@@ -35,7 +35,7 @@
           <!-- Terapis -->
           <li class="nav-item">
             <a href="<?= site_url('Terapis') ?>" class="nav-link <?= $this->uri->segment(1) == 'Terapis' ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-address-card"></i>
+              <i class="nav-icon fas fa-male"></i>
               <p>Terapis</p>
               <span class="float-sm-right">
                 <span class="badge badge-info">New</span>
@@ -45,7 +45,7 @@
           <!-- jasa -->
           <li class="nav-item has-treeview <?= $this->uri->segment(2) == 'product_kiloan' | $this->uri->segment(2) == 'product_satuan' ? 'menu-open' : '' ?>">
             <a href="" class="nav-link">
-              <i class="nav-icon fab fa-product-hunt"></i>
+              <i class="nav-icon fas fa-bed"></i>
               <p> Jasa</p>
               <i class="right fas fa-angle-left"></i>
             </a>
@@ -72,30 +72,15 @@
             </a>
           </li>
           <!-- Laporan -->
-          <li class="nav-item has-treeview">
-            <a href="<?= site_url('report') ?>" class="nav-link <?= $this->uri->segment(1) == 'report' ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p> Laporan </p>
-              <i class="right fas fa-angle-left"></i>
+          <li class="nav-item">
+            <a href="<?= site_url('Laporan') ?>" class="nav-link <?= $this->uri->segment(1) == 'Laporan' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>Laporan</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?= site_url('order/order_kiloan') ?>" class="nav-link <?= $this->uri->segment(2) == 'order_kiloan' ? 'active' : '' ?>">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Laporan Penjualan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= site_url('') ?>" class="nav-link <?= $this->uri->segment(2) == '' ? 'active' : '' ?>">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Laporan Bahan Baku</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <!-- User -->
           <li class="nav-item">
-            <a href="<?= site_url('Employee') ?>" class="nav-link <?= $this->uri->segment(1) == 'Employee' ? 'active' : '' ?>">
+            <a href="<?= site_url('User') ?>" class="nav-link <?= $this->uri->segment(1) == 'User' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-users"></i>
               <p>User</p>
             </a>

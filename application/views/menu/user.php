@@ -5,12 +5,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Menu Employee</h1>
+        <h1 class="m-0 text-dark">Menu User</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Employee</li>
+          <li class="breadcrumb-item active">User</li>
         </ol>
       </div>
     </div>
@@ -28,8 +28,8 @@
 <section class="content">
   <div class="card">
     <div class="card-header">
-      <div class="btn btn-info float-left " data-toggle="modal" data-target="#modal-form">
-        <i class="fa fa-plus"></i> Tambah data
+      <div class="btn btn-warning float-left " data-toggle="modal" data-target="#modal-form">
+        <i class="fa fa-plus"></i> Daftarkan User
       </div>
     </div>
     <!-- /.card-header -->
@@ -81,7 +81,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header bg-info">
-            <h4 class="modal-title mx-auto">Form Tambah Data Karyawan</h4>
+            <h4 class="modal-title mx-auto">Form User Baru</h4>
           </div>
           <div class="modal-body">
             <!-- form start -->

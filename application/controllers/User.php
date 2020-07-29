@@ -1,6 +1,6 @@
 <?php
 
-class Employee extends CI_Controller{
+class User extends CI_Controller{
 
     function __construct()
     {
@@ -19,7 +19,7 @@ class Employee extends CI_Controller{
     public function index()
     {	
 		$data['datakar'] = $this->empl->get();
-        $this->template->load('home/template','menu/employee',$data);
+        $this->template->load('home/template','menu/user',$data);
 	}
 
     function add()

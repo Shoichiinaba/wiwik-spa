@@ -29,13 +29,13 @@
 
   <div class="card">
     <div class="card-header">
-      <div class="btn btn-info float-left " data-toggle="modal" data-target="#modal-info">
+      <div class="btn btn-warning float-left " data-toggle="modal" data-target="#modal-info">
         <i class="fa fa-plus-circle"></i> Tambah Terapis
       </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped">
+      <table id="example1" class="table table-bordered table-striped table-responsive-md">
         <thead class="bg-teal">
           <tr>
             <th>NO</th>
@@ -100,7 +100,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Nama Terapis</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="nama_terapis" placeholder="Masukan Nama Terapis">
+                <input type="text" class="form-control" name="nama_terapis" autofocus="autofocus" placeholder="Masukan Nama Terapis">
               </div>
             </div>
             <div class="form-group row">
