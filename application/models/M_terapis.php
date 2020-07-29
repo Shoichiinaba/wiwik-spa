@@ -43,25 +43,27 @@ class M_terapis extends CI_Model{
     //     return "MB".'-'.date('my').'-'.$kd;
     // }
 
-    // public function add($post){
+    public function TRPS(){ 
+    	
+    	$this->db->SELECT('RIGHT(terapis.id_terapis,4) as kode', FALSE);
+    	$this->db->order_by('id_terapis','DESC');
+    	$this->db->limit(1);
 
-    //     $params['kode_member'] = $this->_get_kode();
-    //     $params['id_level'] = 3;
-    //     $params['nama_member'] = $post['nama'];
-    //     $params['gender_member'] = $post['gender'];
-    //     $params['notelp_member'] = $post['notelp'];
-    //     $params['email'] = $post['email'];
-    //     if (empty($post['password'])) {
-    //         $params['password'] = md5(12345); //default
-    //     }else{
-    //         $params['password'] = md5($post['password']) ; 
-    //     }
-    //     $params['status_member'] = $post['status'];
-    //     $params['photo_member'] = $post['img']; 
-    //     $params['alamat_member'] = $post['alamat']; 
-    //     $params['created'] = date('d-m-Y');
-    //     $this->db->insert('member',$params); 
-    // }
+    	$query_ = $this->db->get('terapis');
+    	if($query_->num_rows() <> 0) 
+    	{
+    		$data_ = $query_->row();
+    		$kode_ = intval($data_->kode) + 1;
+    	}
+    	else 
+    	{
+    		$kode_ = 1;
+    	}
+    	$tahun = date("Y");
+    	$kode_max_ = str_pad($kode_, 4, "0", STR_PAD_LEFT);
+    	$kode_jadi = "TRPS-".$tahun.'-'.$kode_max_;
+    	return $kode_jadi;
+    }
 
     // public function del($id)
 	// {

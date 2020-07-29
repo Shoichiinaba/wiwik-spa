@@ -29,7 +29,7 @@
 
   <div class="card">
     <div class="card-header">
-      <div class="btn btn-info float-left " data-toggle="modal" data-target="#modal-form">
+      <div class="btn btn-info float-left " data-toggle="modal" data-target="#modal-info">
         <i class="fa fa-plus-circle"></i> Tambah Terapis
       </div>
     </div>
@@ -79,6 +79,93 @@
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-info">
+  <div class="modal-dialog">
+    <form action="<?php echo site_url('terapis/tambah'); ?>" method="post">
+      <div class="modal-content bg-info">
+        <div class="modal-header">
+          <h4 class="modal-title">Tambah Data Terapis</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Id Terapis</label>
+                <div class="col-sm-9">
+                  <input type="text" name="id_terapis" value="<?= $nomer; ?>" class="form-control" readonly="" disable>
+                </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Nama Terapis</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="nama_terapis" placeholder="Masukan Nama Terapis">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Alamat</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">No Phone</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="tlp" placeholder="Masukan N0 tlp">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3">Foto Terapis</label>
+              <div class="col-sm-9" >
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="img">
+                    <label class="custom-file-label">Pilih foto</label>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Status</label>
+                <div class="col-sm-9">
+                  <select class="custom-select">
+                    <option value="">Pilih Status</option>
+                    <option value="1">Aktif</option>
+                    <option value="2">Non Aktif</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-light">Simpan</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </form>
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- JAVA SCRIPT -->

@@ -18,38 +18,39 @@ class Terapis extends CI_Controller{
     public function index()
     {
 		$data['list'] =$this->M_terapis->get_terapis();
+		$data['nomer']= $this->M_terapis->TRPS();
         $this->template->load('home/template','menu/terapis', $data); 
     }
 
-    function add()
+    function tambah()
     { 
 		$post = $this->input->post(null, true);
-		if (isset($_POST['add'])) {
+		if (isset($_POST['terapis'])) {
 			if ($this->member->cek_email($post['email'])->num_rows() > 0) {
 				$this->session->set_flashdata('error', 'Email '. $post['email'] .' has already been registered.');
-				redirect('member');
+				redirect('terapis');
 			}else{
 				if (@$_FILES['img']['name'] != null) {
 					if ($this->upload->do_upload('img')) {
 						$post['img'] = $this->upload->data('file_name');
-						$this->member->add($post);
+						$this->terapis->tamabh($post);
 						if ($this->db->affected_rows() > 0) {
 							$this->session->set_flashdata('success','Data successfully added');
-							redirect('member');
+							redirect('terapis');
 						}
 					}else{
 						$error = $this->upload->display_errors();
 						$this->session->set_flashdata('error', $error);
-						redirect('member');
+						redirect('terapis');
 					}
 				}else{
 					// jika gambar tidak diisi
 					$post['img'] = null;
-					$this->member->add($post);
+					$this->terapis->tambah($post);
 					if ($this->db->affected_rows() > 0) {
 						$this->session->set_flashdata('success','Data successfully added');
 					}
-					redirect('member');
+					redirect('terapis');
 				}
 			}
 		}
@@ -57,45 +58,7 @@ class Terapis extends CI_Controller{
 
 	public function edit($id)
     {
-		$post = $this->input->post(null, true);
-		if (isset($_POST['edit'])) {
-			if ($this->member->cek_email($post['email'],$post['idmb'])->num_rows() > 0) {
-				$this->session->set_flashdata('error', 'Email '. $post['email'] .' has already been registered.');
-				redirect('member');
-			}else{
-				if (@$_FILES['img']['name'] != null) {
-					if ($this->upload->do_upload('img')) {
-	
-						$img = $this->member->get($post['idmb'])->row(); //replace gambar
-						if ($img->photo != null) {
-							$target_file = './assets/img/member/'.$img->photo;
-							unlink($target_file);
-						}
-						
-						$post['img'] = $this->upload->data('file_name');
-						$this->member->edit($post);
-						if ($this->db->affected_rows() > 0) {
-							$this->session->set_flashdata('success','Data successfully changes');
-							redirect('member');
-						}
-					}else{
-						$error = $this->upload->display_errors();
-						$this->session->set_flashdata('error',$error);
-						redirect('member');
-					}
-				}else{
-					$post['img'] = null;
-					$this->member->edit($post);
-					if ($this->db->affected_rows() > 0) {
-						$this->session->set_flashdata('success','Data successfully changes');
-						redirect('member');
-					}else{
-						$this->session->set_flashdata('success','Data still available, nothing changed');
-						redirect('member');
-					}
-				}
-			}
-		}
+		
     }
 
     public function del($id) 
