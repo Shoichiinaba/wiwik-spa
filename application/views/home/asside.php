@@ -32,6 +32,14 @@
               <p>Dashboard</p>
             </a>
           </li>
+          <!-- Pelanggan -->
+          <!-- Pelanggan -->
+            <li class="nav-item">
+                <a href="<?= site_url('pelanggan') ?>" class="nav-link <?= $this->uri->segment(1) == 'pelanggan' ? 'active' : '' ?>">
+                  <i class="nav-icon fas fa-cubes"></i>
+                  <p>Pelanggan</p>
+              </a>
+            </li>
           <!-- Terapis -->
           <li class="nav-item">
             <a href="<?= site_url('Terapis') ?>" class="nav-link <?= $this->uri->segment(1) == 'Terapis' ? 'active' : '' ?>">

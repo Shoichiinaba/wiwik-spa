@@ -35,7 +35,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped table-responsive-md">
+      <table id="terapis" class="table table-bordered table-striped table-responsive-md">
         <thead class="bg-teal">
           <tr>
             <th>NO</th>
@@ -48,9 +48,9 @@
           </tr>
         </thead>
         <tbody>
-              <?php $no= 0; foreach ($list as $g ): $no++;?>
+              <?php $no= 1; foreach ($list as $g ):?>
                   <tr>
-                    <td><?php echo $no; ?>
+                    <td><?php echo $no++; ?>
                     <td><?php echo $g->id_terapis ?></td>
                     <td><?php echo $g->nama_terapis ?></td>
                     <td><?php echo $g->alamat ?></td>
@@ -70,7 +70,8 @@
                           }?>
                     </td>
                     <td>
-                      
+                      <a href="<?= site_url('terapis/edit/'.$g->id_terapis); ?>" class="btn btn-warning btn-xs float-left m-1"  data-tooltip="tooltip" title="Ubah Data"> <i class="fa fa-edit"></i> </a>
+                      <a href="<?= site_url('terapis/hapus/'.$g->id_terapis) ?>" class="btn btn-danger btn-xs float-left tombol-hapus m-1" data-tooltip="tooltip" title="Hapus Data"><i class="fa fa-trash"></i> </a>
                     </td>
                   </tr>
               <?php endforeach;?>
@@ -115,7 +116,7 @@
                 <input type="text" class="form-control" name="tlp" placeholder="Masukan N0 tlp">
               </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label class="col-sm-3">Foto Terapis</label>
               <div class="col-sm-9" >
                   <div class="custom-file">
@@ -123,11 +124,11 @@
                     <label class="custom-file-label">Pilih foto</label>
                   </div>
               </div>
-            </div>
+            </div> -->
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Status</label>
                 <div class="col-sm-9">
-                  <select class="custom-select">
+                  <select class="custom-select" name="setatus">
                     <option value="">Pilih Status</option>
                     <option value="1">Aktif</option>
                     <option value="2">Non Aktif</option>
@@ -137,7 +138,7 @@
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-light">Simpan</button>
+          <button type="submit" class="btn btn-outline-light" name="simpan">Simpan</button>
         </div>
       </div>
       <!-- /.modal-content -->
@@ -147,7 +148,11 @@
 </div>
 <!-- /.modal -->
 
-
+<script>
+    $(document).ready(function(){
+        $('#terapis').DataTable()
+    })
+</script>
 
 
 
