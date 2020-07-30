@@ -52,8 +52,8 @@
                         <div class="col-sm-9">
                             <select class="custom-select" name="kelompok_pel" required>
                                 <option value="">--Pilih kelompok--</option>
-                                <option value="1" <?= $pelanggan['kelompok'] == 1 ? 'selected' : '' ; ?>>UMUM</option>
-                                <option value="2" <?= $pelanggan['kelompok'] == 2 ? 'selected' : '' ; ?>>PELANGGAN</option>
+                                <option value="1" <?= $pelanggan['kelompok'] == 1 ? 'selected' : ''; ?>>UMUM</option>
+                                <option value="2" <?= $pelanggan['kelompok'] == 2 ? 'selected' : ''; ?>>PELANGGAN</option>
                             </select>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="<?= site_url('pelanggan'); ?>" class="btn btn-secondary">Close</a>
                     <button type="submit" class="btn btn-warning" name="ubah">Simpan</button>
                 </div>
             </form>

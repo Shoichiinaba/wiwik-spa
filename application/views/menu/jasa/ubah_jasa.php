@@ -64,10 +64,10 @@
                             <input type="number" min="0" class="form-control" name="komisi" placeholder="Masukan komisi jasa" required value="<?= $jasa['komisi']; ?>">
                         </div>
                     </div>
-                   
+
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="<?= site_url('jasa'); ?>" class="btn btn-secondary">Close</a>
                     <button type="submit" class="btn btn-warning" name="ubah">Simpan</button>
                 </div>
             </form>

@@ -55,7 +55,7 @@
                    
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="<?= site_url('barang'); ?>" class="btn btn-secondary">Close</a>
                     <button type="submit" class="btn btn-warning" name="ubah">Simpan</button>
                 </div>
             </form>
