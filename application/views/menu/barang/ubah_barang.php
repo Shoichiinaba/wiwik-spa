@@ -9,13 +9,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Ubah Jasa</h1>
+                <h1 class="m-0 text-dark">Ubah barang</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?= base_url('jasa'); ?>"></a> Menu Jasa</li>
-                    <li class="breadcrumb-item active">Ubah Jasa</li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('barang'); ?>"></a> Menu barang</li>
+                    <li class="breadcrumb-item active">Ubah barang</li>
                 </ol>
             </div>
         </div>
@@ -26,42 +26,30 @@
 <section class="content">
     <div class="card">
         <div class="card-body">
-            <form action="<?= base_url('jasa/update'); ?>" method="post">
+            <form action="<?= base_url('barang/update'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Id jasa</label>
+                        <label class="col-sm-3 col-form-label">Id barang</label>
                         <div class="col-sm-9">
-                            <input type="text" name="id" value="<?= $jasa['id_jasa']; ?>" class="form-control" readonly="ID jasa" disable>
+                            <input type="text" name="id" value="<?= $barang['id_barang']; ?>" class="form-control" readonly="ID barang" disable>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nama</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama" placeholder="Masukan Nama jasa" required value="<?= $jasa['jasa']; ?>">
+                            <input type="text" class="form-control" name="nama" placeholder="Masukan Nama barang" required value="<?= $barang['item']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Biaya</label>
+                        <label class="col-sm-3 col-form-label">Harga</label>
                         <div class="col-sm-9">
-                            <input type="number" min="0" class="form-control" name="biaya" placeholder="Masukan Biaya jasa" required value="<?= $jasa['biaya']; ?>">
+                            <input type="number" min="0" class="form-control" name="harga" placeholder="Masukan Biaya barang" required value="<?= $barang['harga']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Kategori</label>
+                        <label class="col-sm-3 col-form-label">Stok</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="kategori" placeholder="Masukan kategori jasa" required value="<?= $jasa['kategori']; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Jenis</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="jenis" placeholder="Masukan jenis jasa" required value="<?= $jasa['jenis']; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Komisi</label>
-                        <div class="col-sm-9">
-                            <input type="number" min="0" class="form-control" name="komisi" placeholder="Masukan komisi jasa" required value="<?= $jasa['komisi']; ?>">
+                            <input type="text" class="form-control" name="stok" placeholder="Masukan kategori barang" required value="<?= $barang['stock']; ?>">
                         </div>
                     </div>
                    

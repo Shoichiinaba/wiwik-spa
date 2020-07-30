@@ -33,12 +33,10 @@ class M_barang extends CI_Model
     public function tambah($input)
     {
         $data = [
-            'id_data_barang' => $input['id'],
-            'data_barang' => $input['nama'],
-            'biaya' => $input['biaya'],
-            'kategori' => $input['kategori'],
-            'jenis' => $input['jenis'],
-            'komisi' => $input['komisi'],
+            'id_barang' => $input['id'],
+            'item' => $input['nama'],
+            'harga' => $input['harga'],
+            'stock' => $input['stok'],
         ];
 
         $this->db->insert('data_barang', $data);
@@ -46,13 +44,13 @@ class M_barang extends CI_Model
 
     public function hapus($id)
     {
-        $this->db->where('id_data_barang', $id)
+        $this->db->where('id_barang', $id)
             ->delete('data_barang');
     }
 
     public function get_update($id)
     {
-        $this->db->from('data_barang')->where('id_data_barang',$id);
+        $this->db->from('data_barang')->where('id_barang',$id);
         $query = $this->db->get()->row_array();
         return $query;
     }
@@ -60,13 +58,11 @@ class M_barang extends CI_Model
     public function update($input)
     {
         $data = [
-            'data_barang' => $input['nama'],
-            'biaya' => $input['biaya'],
-            'kategori' => $input['kategori'],
-            'jenis' => $input['jenis'],
-            'komisi' => $input['komisi'],
+            'item' => $input['nama'],
+            'harga' => $input['harga'],
+            'stock' => $input['stok'],
         ];
 
-        $this->db->where('id_data_barang',$input['id'])->update('data_barang',$data);
+        $this->db->where('id_barang',$input['id'])->update('data_barang',$data);
     }
 }

@@ -60,7 +60,7 @@
                             <td><?= $data['id_barang']; ?></td>
                             <td><?= $data['item']; ?></td>
                             <td><?= $data['harga']; ?></td>
-                            <td><?= $data['stok']; ?></td>
+                            <td><?= $data['stock']; ?></td>
                            
                             <td>
                                 <a href="<?= site_url('barang/edit/' . $data['id_barang']); ?>" class="btn btn-warning btn-xs float-left m-1" data-tooltip="tooltip" title="Ubah Data"> <i class="fa fa-edit"></i> </a>
@@ -98,27 +98,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Biaya</label>
+                        <label class="col-sm-3 col-form-label">Harga</label>
                         <div class="col-sm-9">
-                            <input type="number" min="0" class="form-control" name="biaya" placeholder="Masukan Biaya barang" required>
+                            <input type="number" min="0" class="form-control" name="harga" placeholder="Masukan Harga barang" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Kategori</label>
+                        <label class="col-sm-3 col-form-label">Stok</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="kategori" placeholder="Masukan Kategori barang" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Jenis</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="jenis" placeholder="Masukan jenis barang" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Komisi</label>
-                        <div class="col-sm-9">
-                            <input type="number" min="0" class="form-control" name="komisi" placeholder="Masukan Komisi" required>
+                            <input type="number" min="0" class="form-control" name="stok" placeholder="Masukan stok barang" required>
                         </div>
                     </div>
                 </div>
