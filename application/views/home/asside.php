@@ -108,6 +108,12 @@
               <p>Jasa</p>
            </a>
         </li>
+        <li class="nav-item">
+            <a href="<?= site_url('barang') ?>" class="nav-link <?= $this->uri->segment(1) == 'barang' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>Barang</p>
+           </a>
+        </li>
 
         <!-- keluar -->
         <li class="nav-item">

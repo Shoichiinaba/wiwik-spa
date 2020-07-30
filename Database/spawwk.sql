@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Jul 2020 pada 18.09
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Jul 30, 2020 at 11:12 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,24 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_barang`
+-- Table structure for table `data_barang`
 --
 
 CREATE TABLE `data_barang` (
-  `id_barang` varchar(10) NOT NULL,
+  `id_barang` varchar(20) NOT NULL,
   `item` varchar(40) NOT NULL,
   `harga` int(11) NOT NULL,
   `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `data_barang`
+--
+
+INSERT INTO `data_barang` (`id_barang`, `item`, `harga`, `stock`) VALUES
+('BRG-2020-0001', 'ubah barang 1', 123, 123);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jasa`
+-- Table structure for table `jasa`
 --
 
 CREATE TABLE `jasa` (
-  `id_jasa` varchar(10) NOT NULL,
+  `id_jasa` varchar(20) NOT NULL,
   `jasa` varchar(50) NOT NULL,
   `biaya` int(10) NOT NULL,
   `kategori` varchar(10) NOT NULL,
@@ -48,10 +56,17 @@ CREATE TABLE `jasa` (
   `komisi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `jasa`
+--
+
+INSERT INTO `jasa` (`id_jasa`, `jasa`, `biaya`, `kategori`, `jenis`, `komisi`) VALUES
+('JS-2020-0001', 'ubah jasa 1', 123, 'kategori 1', 'jenis 1', 12);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `karyawan`
+-- Table structure for table `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -63,7 +78,7 @@ CREATE TABLE `karyawan` (
   `password` varchar(100) NOT NULL,
   `notelp_karyawan` varchar(16) DEFAULT NULL,
   `branch` int(2) NOT NULL COMMENT '1 : toko 1, 2: toko 2',
-  `alamat_karyawan` text,
+  `alamat_karyawan` text DEFAULT NULL,
   `photo_karyawan` varchar(100) DEFAULT NULL,
   `status_karyawan` int(11) NOT NULL COMMENT '1: aktif, 2: non aktif',
   `created` varchar(10) NOT NULL,
@@ -71,7 +86,7 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `karyawan`
+-- Dumping data for table `karyawan`
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `NIP`, `id_level`, `nama_karyawan`, `email`, `password`, `notelp_karyawan`, `branch`, `alamat_karyawan`, `photo_karyawan`, `status_karyawan`, `created`, `updated`) VALUES
@@ -81,7 +96,7 @@ INSERT INTO `karyawan` (`id_karyawan`, `NIP`, `id_level`, `nama_karyawan`, `emai
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `level`
+-- Table structure for table `level`
 --
 
 CREATE TABLE `level` (
@@ -91,7 +106,7 @@ CREATE TABLE `level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `level`
+-- Dumping data for table `level`
 --
 
 INSERT INTO `level` (`id_level`, `nama_level`, `salary`) VALUES
@@ -102,21 +117,30 @@ INSERT INTO `level` (`id_level`, `nama_level`, `salary`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
-  `id_pelanggan` varchar(10) NOT NULL,
+  `id_pelanggan` varchar(20) NOT NULL,
   `nama_pelanggan` varchar(40) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` bigint(13) NOT NULL,
   `kelompok` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `telp`, `kelompok`) VALUES
+('PEL-2020-0002', 'ubah pelanggan 2', 'alamat 2', 123, 1),
+('PEL-2020-0003', 'ubah pelanggan 3', 'alamat 3', 321, 2),
+('PEL-2020-0004', 'pelanggan 4', 'alamat 4', 123, 1);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `terapis`
+-- Table structure for table `terapis`
 --
 
 CREATE TABLE `terapis` (
@@ -128,7 +152,7 @@ CREATE TABLE `terapis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `terapis`
+-- Dumping data for table `terapis`
 --
 
 INSERT INTO `terapis` (`id_terapis`, `nama_terapis`, `alamat`, `tlp`, `setatus`) VALUES
@@ -166,6 +190,12 @@ ALTER TABLE `level`
   ADD PRIMARY KEY (`id_level`);
 
 --
+-- Indexes for table `pelanggan`
+--
+ALTER TABLE `pelanggan`
+  ADD PRIMARY KEY (`id_pelanggan`);
+
+--
 -- Indexes for table `terapis`
 --
 ALTER TABLE `terapis`
@@ -180,20 +210,23 @@ ALTER TABLE `terapis`
 --
 ALTER TABLE `karyawan`
   MODIFY `id_karyawan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
 --
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
   MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `karyawan`
+-- Constraints for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`id_level`) REFERENCES `level` (`id_level`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
