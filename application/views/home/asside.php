@@ -97,18 +97,18 @@
         <?php if ($this->session->userdata('level') == 2) { ?>
          <!-- Pelanggan -->
         <li class="nav-item">
-            <a href="<?= site_url('inventory') ?>" class="nav-link <?= $this->uri->segment(1) == 'inventory' ? 'active' : '' ?>">
+            <a href="<?= site_url('pelanggan') ?>" class="nav-link <?= $this->uri->segment(1) == 'pelanggan' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-cubes"></i>
               <p>Pelanggan</p>
            </a>
         </li>
-          <!-- Kasir -->
         <li class="nav-item">
-          <a href="<?= site_url('') ?>" class="nav-link <?= $this->uri->segment(1) == '' ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-address-card"></i>
-            <p>Kasir</p>
-          </a>
+            <a href="<?= site_url('jasa') ?>" class="nav-link <?= $this->uri->segment(1) == 'jasa' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>Jasa</p>
+           </a>
         </li>
+
         <!-- keluar -->
         <li class="nav-item">
           <a href="<?= site_url('auth/logout') ?>" class="nav-link tombol-keluar">
