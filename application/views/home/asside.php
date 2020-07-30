@@ -117,6 +117,12 @@
               <p>Pelanggan</p>
            </a>
         </li>
+        <li class="nav-item">
+            <a href="<?= site_url('jasa') ?>" class="nav-link <?= $this->uri->segment(1) == 'jasa' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>Jasa</p>
+           </a>
+        </li>
 
         <!-- keluar -->
         <li class="nav-item">
