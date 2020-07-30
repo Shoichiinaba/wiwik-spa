@@ -27,6 +27,14 @@ class M_employee extends CI_Model{
         return "KAR".'-'.$branch.'-'.date('my').'-'.$kd;
     }
 
+    function get_kar()
+		{
+            $this->db->select('karyawan.*');
+			$query = $this->db->get('karyawan');
+            return $query->result();
+
+		}
+
     public function add($post){
 
         $params['NIP'] = $this->_get_kode();

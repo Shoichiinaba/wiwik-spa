@@ -45,9 +45,6 @@
             <a href="<?= site_url('Terapis') ?>" class="nav-link <?= $this->uri->segment(1) == 'Terapis' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-male"></i>
               <p>Terapis</p>
-              <span class="float-sm-right">
-                <span class="badge badge-info">New</span>
-              </span>
             </a>
           </li>
           <!-- jasa -->
@@ -95,6 +92,14 @@
               <p>Pelanggan</p>
            </a>
         </li>
+        <!-- Kasir -->
+        <li class="nav-item">
+            <a href="<?= site_url('kasir') ?>" class="nav-link <?= $this->uri->segment(1) == 'kasir' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cart-plus"></i>
+              <p>Kasir</p>
+           </a>
+        </li>
+        <!-- Jasa -->
         <li class="nav-item">
             <a href="<?= site_url('jasa') ?>" class="nav-link <?= $this->uri->segment(1) == 'jasa' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-cubes"></i>
