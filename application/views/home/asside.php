@@ -34,9 +34,9 @@
           </li>
           <!-- Pelanggan -->
           <li class="nav-item">
-                <a href="<?= site_url('pelanggan') ?>" class="nav-link <?= $this->uri->segment(1) == 'pelanggan' ? 'active' : '' ?>">
+                <a href="<?= site_url('') ?>" class="nav-link <?= $this->uri->segment(1) == '' ? 'active' : '' ?>">
                   <i class="nav-icon fas fa-cubes"></i>
-                  <p>coba git </p>
+                  <p>Tes</p>
               </a>
             </li>
           <!-- Pelanggan -->
