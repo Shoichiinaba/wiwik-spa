@@ -19,7 +19,7 @@ class M_auth extends CI_Model{
         $this->db->where('password',md5($post['password']));
         $query = $this->db->get();
         return $query;
-    }
+    } 
 
     public function login_member($post)
     {

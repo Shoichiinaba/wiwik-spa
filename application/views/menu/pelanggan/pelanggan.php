@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="<?= base_url('assets/lte') ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 
 <section class="content-header">
-    <div class="container-fluid">
+    <div class="container-fluid bg-red">
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Menu Pelanggan</h1>
