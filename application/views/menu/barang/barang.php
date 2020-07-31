@@ -1,3 +1,4 @@
+
 <!-- Select2 -->
 <link rel="stylesheet" href="<?= base_url('assets/lte') ?>/plugins/select2/css/select2.min.css">
 <link rel="stylesheet" href="<?= base_url('assets/lte') ?>/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
@@ -33,7 +34,13 @@
     <div class="card">
         <div class="card-header">
             <div class="btn btn-info" data-toggle="modal" data-target="#modal-form">
-                <i class="fa fa-plus-circle"></i> Tambah Barang
+                <i class="fa fa-plus-circle"></i> Tambah Barang Baru
+            </div>
+            <div class="btn btn-success" data-toggle="modal" data-target="#modal-form-stok">
+                <i class="fa fa-plus-circle"></i> Tambah Stok
+            </div>
+            <div class="btn btn-secondary" data-toggle="modal" data-target="#modal-form-stok">
+                <i class="fa fa-book"></i> History stok
             </div>
             <!-- <a href="<?= base_url('laporan/laporan_penjualan/print') ?>" class="btn btn-success">
                 <i class="fa fa-download"></i> Cetak Laporan
@@ -107,6 +114,44 @@
                         <label class="col-sm-3 col-form-label">Stok</label>
                         <div class="col-sm-9">
                             <input type="number" min="0" class="form-control" name="stok" placeholder="Masukan stok barang" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-light" name="simpan">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL TAMBAH sstok -->
+<div class="modal fade" id="modal-form-stok">
+    <div class="modal-dialog">
+        <div class="modal-content bg-info">
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Stok Barang</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <form action="<?= site_url('barang/tambah'); ?>" method="post">
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Barang</label>
+                        <div class="col-sm-9">
+                            <select name="barang" class="form-control">
+                            <option value="">--- Pilih Barang ---</option>
+                            <option value="">Barang 1</option>
+                            <option value="">Barang 2</option>
+                            <option value="">Barang ...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Stok</label>
+                        <div class="col-sm-9">
+                            <input type="number" min="0" class="form-control" name="stok" placeholder="Masukan Jumlah barang" required>
                         </div>
                     </div>
                 </div>
