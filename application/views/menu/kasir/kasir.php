@@ -101,7 +101,7 @@
              <h3><b><span id="total" style="font-size:50pt">0<span></h3>
             <span class="progress-description">     
                 <td>
-                    <button type="button" class="btn btn-block btn-outline-secondary btn-sm">Proses</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm"> <i class="fa fa-money-bill">  Proses</i></button>
                 </td>
             </span>
             </div>
