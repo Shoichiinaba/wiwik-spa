@@ -7,7 +7,14 @@ class M_terapis extends CI_Model{
 			$query = $this->db->get('terapis');
             return $query->result();
 
-		}
+        }
+        public function get()
+    {
+        // $this->db->select('*');
+        $this->db->from('terapis');
+        $query = $this->db->get();
+        return $query;
+    }
 
     public function TRPS(){ 
     	

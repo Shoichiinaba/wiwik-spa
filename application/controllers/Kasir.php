@@ -7,17 +7,23 @@ class Kasir extends CI_Controller
         parent::__construct();
         check_not_login();
         // cek_admin();
-        $this->load->model('M_employee');
+        $this->load->model('pelanggan/M_pelanggan');
+        $this->load->model('M_barang');
+        $this->load->model('M_terapis');
+        $this->load->model('M_jasa');
+        $this->load->model('M_kasir');
+        
     }
 
-    public function index()
+    function index()
     {
-        $this->load->model('pelanggan/M_pelanggan');
-        $pelanggan = $this->M_pelanggan->get()->result();
-        $data = array(
-            'pelanggan' => $pelanggan,
-        );
-        
+
+        $data['pelanggan']= $this->M_pelanggan->get()->result();
+        $data['item']= $this->M_barang->amb()->result();
+        $data['terapis']= $this->M_terapis->get()->result();
+        $data['jasa']= $this->M_jasa->get_all()->result();
+        $data['no_struk']= $this->M_kasir->STRK();
+       
         $this->template->load('home/template', 'menu/kasir/kasir', $data);
     }
 

@@ -9,6 +9,14 @@ class M_jasa extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    function get_all()
+    {
+        $this->db->from('jasa');
+        $this->db->order_by('id_jasa','desc');
+        $query = $this->db->get();
+        return $query;
+    }
+
 
     public function get_kd()
     {

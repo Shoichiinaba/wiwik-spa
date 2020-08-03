@@ -9,7 +9,13 @@ class M_barang extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-
+    public function amb()
+    {
+        // $this->db->select('*');
+        $this->db->from('data_barang');
+        $query = $this->db->get();
+        return $query;
+    }
     public function get_kd()
     {
 
